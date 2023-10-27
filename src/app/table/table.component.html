@@ -1,1 +1,35 @@
-<p>table works!</p>
+<div class="grid__wrapper">
+    <div class="density-chooser">
+        <igx-buttongroup [values]="sizes" (selected)="selectSize($event)"></igx-buttongroup>
+    </div>
+    <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data" [moving]="true" [autoGenerate]="false" height="850px" width="100%" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
+        <igx-grid-toolbar>
+            <igx-grid-toolbar-actions>
+                <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+            </igx-grid-toolbar-actions>
+        </igx-grid-toolbar>
+
+        <igx-column field="ProductName" header="Marca" [sortable]="true" [dataType]="'string'">
+        </igx-column>
+        <igx-column field="carModel" header="Modelo" [sortable]="true" [dataType]="'string'">
+        </igx-column>
+        <igx-column field="QuantityPerUnit" header="Patente" [sortable]="true" [dataType]="'string'">
+        </igx-column>
+        <igx-column field="OrderDate" header="Año" [sortable]="true" [dataType]="'date'">
+        </igx-column>
+        <igx-column field="UnitPrice" header="Valor Cuota" [sortable]="true" dataType="number">
+            <ng-template igxCell let-cell="cell" let-val let-row>
+                {{+val | currency}}
+            </ng-template>
+        </igx-column>
+        <igx-column field="cobertura" header="Cobertura" [sortable]="true" [dataType]="'string'">
+        </igx-column>
+        <igx-column field="Discontinued" header="Asegurado" [sortable]="true" [dataType]="'boolean'">
+            <ng-template igxCell let-cell="cell" let-val>
+                <img *ngIf="val" src="https://www.infragistics.com/angular-demos-lob/assets/images/grid/active.png" title="Continued" alt="Continued" />
+                <img *ngIf="!val" src="https://www.infragistics.com/angular-demos-lob/assets/images/grid/expired.png" title="Discontinued" alt="Discontinued" />
+            </ng-template>
+        </igx-column>
+    </igx-grid>
+
+</div>
