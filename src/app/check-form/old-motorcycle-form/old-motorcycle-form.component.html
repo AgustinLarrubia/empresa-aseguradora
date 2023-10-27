@@ -1,1 +1,53 @@
-<p>old-motorcycle-form works!</p>
+<div>
+  <mat-grid-list cols="2" rowHeight="1rem">
+    <mat-grid-tile colspan="2" rowspan="3">
+      <h1>Moto Patente Antigua</h1>
+    </mat-grid-tile>
+    <form #login="ngForm" [formGroup]="oldMotorcycleForm" action="" class="formularioVehiculo">
+      <mat-grid-tile colspan="2" rowspan="4">
+        <mat-form-field class="example-full-width">
+          <mat-label id="motorcycle-brand">Marca</mat-label>
+          <input matInput required minlength="3" id="motorcycle-brand" formControlName="motorcycleBrand" placeholder="Ford" ngModel>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2" rowspan="4">
+        <mat-form-field class="example-full-width">
+          <mat-label id="motorcycle-model">Modelo</mat-label>
+          <input matInput id="motorcycle-model" formControlName="motorcycleModel" placeholder="Ka" ngModel>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2" rowspan="4">
+        <mat-form-field class="example-full-width">
+          <mat-label id="motorcycle-version">Version</mat-label>
+          <input matInput id="motorcycle-version" formControlName="motorcycleVersion" placeholder="Ka" ngModel>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2" rowspan="4">
+        <mat-form-field class="example-full-width">
+          <mat-label id="motorcycle-year">Año</mat-label>
+          <input id="motorcycle-year" type="date" formControlName="motorcycleYear" matInput placeholder="Ex. pat@example.com" ngModel>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2" rowspan="4">
+        <mat-form-field class="example-full-width">
+          <mat-label id="client-phone">Telefono</mat-label>
+          <input type="tel" id="client-phone" formControlName="clientPhone" matInput placeholder="+54 9 (xxx) xxx xxxx" ngModel>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2" rowspan="4">
+        <mat-form-field class="example-full-width">
+          <mat-label id="client-license-plate">Patente</mat-label>
+          <input type="text" id="client-license-plate" formControlName="clientLicensePlate" mask="AA-000-SS" matInput placeholder="AA 000 ZZ o AAA 000" ngModel>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2" rowspan="2">
+        <mat-dialog-actions>
+          <button mat-raised-button type="submit" color="primary">Enviar</button>
+        </mat-dialog-actions>
+      </mat-grid-tile>
+    </form>
+  
+  </mat-grid-list>
+
+</div>
+

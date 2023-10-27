@@ -1,9 +1,9 @@
 
 <mat-grid-list cols="2" rowHeight="1rem">
-  <mat-grid-tile colspan="2" rowspan="2">
-    <h1>Seguro para Vehiculos</h1>
+  <mat-grid-tile colspan="2" rowspan="3">
+    <h1>¡Cotizá tu seguro para vehiculos! sin costo 😁</h1>
   </mat-grid-tile>
-  <form #login="ngForm" action="" [formGroup]="clientData" (ngSubmit)="openDialog()" class="formularioVehiculo">
+  <form #myForm="ngForm" action="" [formGroup]="clientData" (ngSubmit)="openDialog()" class="formularioVehiculo">
     <mat-grid-tile colspan="2" rowspan="4">
       <mat-form-field class="example-full-width">
         <mat-label id="client-name">Nombre</mat-label>
@@ -13,30 +13,30 @@
     <mat-grid-tile colspan="2" rowspan="4">
       <mat-form-field class="example-full-width">
         <mat-label id="client-last-name">Apellido</mat-label>
-        <input matInput id="client-last-name" formControlName="clientLastName" placeholder="Apellido" ngModel>
+        <input matInput required id="client-last-name" formControlName="clientLastName" placeholder="Apellido" ngModel>
       </mat-form-field>
     </mat-grid-tile>
     <mat-grid-tile colspan="2" rowspan="4">
       <mat-form-field class="example-full-width">
         <mat-label id="client-email">Correo electronico</mat-label>
-        <input id="client-email" type="email" formControlName="clientEmail" matInput placeholder="Ex. pat@example.com" ngModel>
+        <input id="client-email" required type="email" formControlName="clientEmail" matInput placeholder="Ex. pat@example.com"  ngModel>
       </mat-form-field>
     </mat-grid-tile>
     <mat-grid-tile colspan="2" rowspan="4">
       <mat-form-field class="example-full-width">
         <mat-label id="client-phone">Telefono</mat-label>
-        <input type="tel" id="client-phone" formControlName="clientPhone" matInput placeholder="+54 9 (xxx) xxx xxxx" ngModel>
+        <input type="tel" id="client-phone" required formControlName="clientPhone" matInput placeholder="+54 9 (xxx) xxx xxxx" ngModel>
       </mat-form-field>
     </mat-grid-tile>
     <mat-grid-tile colspan="2" rowspan="4">
       <mat-form-field class="example-full-width">
         <mat-label id="client-license-plate">Patente</mat-label>
-        <input type="text" id="client-license-plate" formControlName="clientLicensePlate" mask="AA-000-SS" matInput placeholder="AA 000 ZZ o AAA 000" ngModel>
+        <input type="text" id="client-license-plate" required formControlName="clientLicensePlate" mask="AA-000-SS" matInput placeholder="AA 000 ZZ o AAA 000" ngModel>
       </mat-form-field>
     </mat-grid-tile>
     <mat-grid-tile colspan="2" rowspan="2">
       <mat-dialog-actions>
-        <button mat-raised-button type="submit" color="primary">Enviar</button>
+        <button mat-raised-button type="submit" color="primary" [disabled]="!myForm.valid">Enviar</button>
       </mat-dialog-actions>
     </mat-grid-tile>
   </form>
