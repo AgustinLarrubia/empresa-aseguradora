@@ -1,0 +1,53 @@
+<div>
+  <mat-grid-list cols="2" rowHeight="1rem">
+    <mat-grid-tile colspan="2" rowspan="2">
+      <h1>Autos Patente Antigua</h1>
+    </mat-grid-tile>
+    <form #login="ngForm" [formGroup]="oldCarForm" action="" class="formularioVehiculo">
+      <mat-grid-tile colspan="2" rowspan="4">
+        <mat-form-field class="example-full-width">
+          <mat-label id="car-brand">Marca</mat-label>
+          <input matInput required minlength="3" id="car-brand" formControlName="carBrand" placeholder="Ford" ngModel>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2" rowspan="4">
+        <mat-form-field class="example-full-width">
+          <mat-label id="car-model">Modelo</mat-label>
+          <input matInput id="car-model" formControlName="carModel" placeholder="Ka" ngModel>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2" rowspan="4">
+        <mat-form-field class="example-full-width">
+          <mat-label id="car-version">Version</mat-label>
+          <input matInput id="car-version" formControlName="carVersion" placeholder="Ka" ngModel>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2" rowspan="4">
+        <mat-form-field class="example-full-width">
+          <mat-label id="car-year">Año</mat-label>
+          <input id="car-year" type="date" formControlName="carYear" matInput placeholder="Ex. pat@example.com" ngModel>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2" rowspan="4">
+        <mat-form-field class="example-full-width">
+          <mat-label id="client-phone">Telefono</mat-label>
+          <input type="tel" id="client-phone" formControlName="clientPhone" matInput placeholder="+54 9 (xxx) xxx xxxx" ngModel>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2" rowspan="4">
+        <mat-form-field class="example-full-width">
+          <mat-label id="client-license-plate">Patente</mat-label>
+          <input type="text" id="client-license-plate" formControlName="clientLicensePlate" mask="AA-000-SS" matInput placeholder="AA 000 ZZ o AAA 000" ngModel>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2" rowspan="2">
+        <mat-dialog-actions>
+          <button mat-raised-button type="submit" color="primary">Enviar</button>
+        </mat-dialog-actions>
+      </mat-grid-tile>
+    </form>
+  
+  </mat-grid-list>
+
+</div>
+

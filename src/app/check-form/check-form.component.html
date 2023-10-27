@@ -1,0 +1,29 @@
+<mat-grid-list cols="2" rowHeight="1rem">
+  <mat-grid-tile colspan="2" rowspan="10">
+    <div class="container">
+      <h1>¡Cotizá tu seguro para vehiculos! sin costo 😁</h1>
+      <h2>Seleccione tipo de vehiculo</h2>
+      <mat-form-field>
+        <mat-label>Elija una opcion</mat-label>
+        <mat-select [(ngModel)]="vehicleSelected">
+          <mat-option value="AutoPatenteNueva">Auto Patente Nueva</mat-option>
+          <mat-option value="AutoPatenteAntigua">Auto Patente Antigua</mat-option>
+          <mat-option value="MotoPatenteNueva">Moto Patente Nueva</mat-option>
+          <mat-option value="MotoPatenteAntigua">Moto Patente Antigua</mat-option>
+        </mat-select>
+      </mat-form-field>
+      </div>
+  </mat-grid-tile>
+</mat-grid-list>
+<div class="forms" *ngIf="vehicleSelected === 'AutoPatenteNueva'">
+  <app-new-car-form></app-new-car-form>
+</div>
+<div class="forms" *ngIf="vehicleSelected === 'AutoPatenteAntigua'">
+  <app-old-car-form></app-old-car-form>
+</div>
+<div class="forms" *ngIf="vehicleSelected === 'MotoPatenteNueva'">
+  <app-new-motorcycle-form></app-new-motorcycle-form>
+</div>
+<div class="forms" *ngIf="vehicleSelected === 'MotoPatenteAntigua'">
+  <app-old-motorcycle-form></app-old-motorcycle-form>
+</div>

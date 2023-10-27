@@ -1,0 +1,21 @@
+<mat-dialog-content>
+  <header>
+    <h1 class="titulo">¡Formulario Enviado! 😁</h1>
+  </header>
+  <body>
+    <h2>Sus Datos:</h2>
+    <ul>
+      <li>Nombre: {{clientData.value.clientName}}</li>
+      <li>Apellido: {{clientData.value.clientLastName}}</li>
+      <li>Correo electronico: {{clientData.value.clientEmail}}</li>
+      <li>Celular: {{clientData.value.clientPhone}}</li>
+      <li>Patente: {{clientData.value.clientLicensePlate}}</li>
+    </ul>
+    <div class="container">
+      <div class="doneContainer">
+        <mat-icon style="color: white;">done</mat-icon>
+      </div>
+    </div>
+
+  </body>
+</mat-dialog-content>
