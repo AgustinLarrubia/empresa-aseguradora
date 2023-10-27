@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 import { FormControl, FormGroup} from '@angular/forms';
 import { OutletContext } from '@angular/router';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -26,7 +27,7 @@ export class FormComponent {
       console.log(this.clientData)
       this.matDialog.open(DialogComponent,{
         width:'40%',
-        height: '50%',
+        height: '70%',
         data: this.clientData,
       })
     }

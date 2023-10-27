@@ -24,6 +24,8 @@ import { OldCarFormComponent } from './check-form/old-car-form/old-car-form.comp
 import { OldMotorcycleFormComponent } from './check-form/old-motorcycle-form/old-motorcycle-form.component';
 import { NewMotorcycleFormComponent } from './check-form/new-motorcycle-form/new-motorcycle-form.component';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+
 import { 
 	IgxGridModule,
 	IgxButtonGroupModule
@@ -60,10 +62,10 @@ import {
     MatSelectModule,
     MatOptionModule,
     MatIconModule,
-    BrowserAnimationsModule,
     IgxGridModule,
     IgxButtonGroupModule,
-    IgxPreventDocumentScrollModule
+    IgxPreventDocumentScrollModule,
+    MatToolbarModule
   ],
   providers: [provideNgxMask()],
   bootstrap: [AppComponent]
