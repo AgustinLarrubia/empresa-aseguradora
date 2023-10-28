@@ -12,6 +12,7 @@ export class OldCarFormComponent {
     carModel: new FormControl<string>(''),
     carVersion: new FormControl<string>(''),
     carYear: new FormControl<string>(''),
+    carEmail: new FormControl<string>(''),
     clientPhone: new FormControl<string>(''),
     clientLicensePlate: new FormControl<string>(''),
   })

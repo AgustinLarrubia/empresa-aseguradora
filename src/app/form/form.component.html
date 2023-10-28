@@ -1,37 +1,56 @@
 
 <mat-grid-list cols="2" rowHeight="1rem">
-  <mat-grid-tile colspan="2" rowspan="3">
+  <mat-grid-tile colspan="2" rowspan="5">
     <h1>¡Cotizá tu seguro para vehiculos! sin costo 😁</h1>
   </mat-grid-tile>
   <form #myForm="ngForm" action="" [formGroup]="clientData" (ngSubmit)="openDialog()" class="formularioVehiculo">
     <mat-grid-tile colspan="2" rowspan="4">
+      <span style="position: absolute; padding-right: 15rem;">👉</span>
       <mat-form-field class="example-full-width">
         <mat-label id="client-name">Nombre</mat-label>
         <input matInput required minlength="3" id="client-name" formControlName="clientName" placeholder="Nombre" ngModel>
       </mat-form-field>
     </mat-grid-tile>
     <mat-grid-tile colspan="2" rowspan="4">
+      <span style="position: absolute; padding-right: 15rem;">👉</span>
       <mat-form-field class="example-full-width">
         <mat-label id="client-last-name">Apellido</mat-label>
         <input matInput required id="client-last-name" formControlName="clientLastName" placeholder="Apellido" ngModel>
       </mat-form-field>
     </mat-grid-tile>
     <mat-grid-tile colspan="2" rowspan="4">
+      <span style="position: absolute; padding-right: 15rem;">👉</span>
+      <mat-form-field class="example-full-width">
+        <mat-label id="client-brand">Marca</mat-label>
+        <input matInput required id="client-brand" formControlName="clientBrand" placeholder="Ford, Zanella, etc..." ngModel>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2" rowspan="4">
+      <span style="position: absolute; padding-right: 15rem;">👉</span>
+      <mat-form-field class="example-full-width">
+        <mat-label id="client-model">Modelo</mat-label>
+        <input matInput required id="client-model" formControlName="clientModel" placeholder="Fiesta, Modelo 87, etc..." ngModel>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2" rowspan="4">
+      <span style="position: absolute; padding-right: 15rem;">👉</span>
+      <mat-form-field class="example-full-width">
+        <mat-label id="client-year">Año</mat-label>
+        <input matInput required id="client-year" formControlName="clientYear" placeholder="Apellido" ngModel>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2" rowspan="4">
+      <span style="position: absolute; padding-right: 15rem;">👉</span>
       <mat-form-field class="example-full-width">
         <mat-label id="client-email">Correo electronico</mat-label>
-        <input id="client-email" required type="email" formControlName="clientEmail" matInput placeholder="Ex. pat@example.com"  ngModel>
+        <input mask="A*@A*.SSS"  id="client-email" required type="text" formControlName="clientEmail" matInput placeholder="Ex. agustin@larrubia.com"  ngModel>
       </mat-form-field>
     </mat-grid-tile>
     <mat-grid-tile colspan="2" rowspan="4">
+      <span style="position: absolute; padding-right: 15rem;">👉</span>
       <mat-form-field class="example-full-width">
         <mat-label id="client-phone">Telefono</mat-label>
-        <input type="tel" id="client-phone" required formControlName="clientPhone" matInput placeholder="+54 9 (xxx) xxx xxxx" ngModel>
-      </mat-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile colspan="2" rowspan="4">
-      <mat-form-field class="example-full-width">
-        <mat-label id="client-license-plate">Patente</mat-label>
-        <input type="text" id="client-license-plate" required formControlName="clientLicensePlate" mask="AA-000-SS" matInput placeholder="AA 000 ZZ o AAA 000" ngModel>
+        <input type="tel" id="client-phone" required formControlName="clientPhone" matInput placeholder="(XXX) XXXX-XXXX" mask="(000) 0000-0000" ngModel>
       </mat-form-field>
     </mat-grid-tile>
     <mat-grid-tile colspan="2" rowspan="2">

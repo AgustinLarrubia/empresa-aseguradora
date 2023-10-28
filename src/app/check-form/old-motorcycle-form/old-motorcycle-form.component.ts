@@ -12,6 +12,7 @@ export class OldMotorcycleFormComponent {
     motorcycleModel: new FormControl<string>(''),
     motorcycleVersion: new FormControl<string>(''),
     motorcycleYear: new FormControl<string>(''),
+    motorcycleEmail: new FormControl<string>(''),
     clientPhone: new FormControl<string>(''),
     clientLicensePlate: new FormControl<string>(''),
   })

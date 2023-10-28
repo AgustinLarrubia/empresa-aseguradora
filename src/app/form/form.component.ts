@@ -15,9 +15,11 @@ export class FormComponent {
   clientData = new FormGroup({
     clientName: new FormControl<string>(''),
     clientLastName: new FormControl<string>(''),
+    clientBrand: new FormControl<string>(''),
+    clientModel: new FormControl<string>(''),
+    clientYear: new FormControl<string>(''),
     clientEmail: new FormControl<string>(''),
-    clientPhone: new FormControl<string>(''),
-    clientLicensePlate: new FormControl<string>(''),
+    clientPhone: new FormControl<string>('')
   })
 
 

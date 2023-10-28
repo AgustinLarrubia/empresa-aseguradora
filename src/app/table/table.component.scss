@@ -26,3 +26,11 @@ igx-buttongroup{
   display: block;
   width: 500px;
 }
+
+
+
+@media(max-width: 500px){ 
+  .density-chooser{
+    display: none;
+  }
+}

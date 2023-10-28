@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl} from '@angular/forms';
-import { MatOptionModule } from '@angular/material/core';
+import { Component, OnInit} from '@angular/core';
+
 
 @Component({
   selector: 'app-check-form',
@@ -9,12 +8,13 @@ import { MatOptionModule } from '@angular/material/core';
 })
 export class CheckFormComponent implements OnInit {
 
+  
   vehicleSelected: string = '';
 
   constructor() { }
 
   ngOnInit() { 
-    this.getVehicleText
+    this.getVehicleText();
   }
 
   getVehicleText() {

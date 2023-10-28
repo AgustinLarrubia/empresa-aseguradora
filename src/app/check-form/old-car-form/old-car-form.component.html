@@ -3,7 +3,7 @@
     <mat-grid-tile colspan="2" rowspan="3">
       <h1>Autos Patente Antigua</h1>
     </mat-grid-tile>
-    <form #login="ngForm" [formGroup]="oldCarForm" action="" class="formularioVehiculo">
+    <form #myForm="ngForm" [formGroup]="oldCarForm" action="" class="formularioVehiculo">
       <mat-grid-tile colspan="2" rowspan="4">
         <mat-form-field class="example-full-width">
           <mat-label id="car-brand">Marca</mat-label>
@@ -30,19 +30,25 @@
       </mat-grid-tile>
       <mat-grid-tile colspan="2" rowspan="4">
         <mat-form-field class="example-full-width">
+          <mat-label id="car-email">Correo electronico</mat-label>
+          <input id="car-email" type="text" formControlName="carEmail" matInput placeholder="Ex. agustin@larrubia.com" ngModel>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2" rowspan="4">
+        <mat-form-field class="example-full-width">
           <mat-label id="client-phone">Telefono</mat-label>
-          <input type="tel" id="client-phone" formControlName="clientPhone" matInput placeholder="+54 9 (xxx) xxx xxxx" ngModel>
+          <input type="tel" id="client-phone" formControlName="clientPhone" matInput placeholder="(XXX) XXXX-XXXX" mask="(000) 0000-0000" ngModel>
         </mat-form-field>
       </mat-grid-tile>
       <mat-grid-tile colspan="2" rowspan="4">
         <mat-form-field class="example-full-width">
           <mat-label id="client-license-plate">Patente</mat-label>
-          <input type="text" id="client-license-plate" formControlName="clientLicensePlate" mask="AA-000-SS" matInput placeholder="AA 000 ZZ o AAA 000" ngModel>
+          <input type="text" id="client-license-plate" formControlName="clientLicensePlate" mask="AAA-000" matInput placeholder="AAA 000" ngModel>
         </mat-form-field>
       </mat-grid-tile>
       <mat-grid-tile colspan="2" rowspan="2">
         <mat-dialog-actions>
-          <button mat-raised-button type="submit" color="primary">Enviar</button>
+          <button mat-raised-button type="submit" color="primary" [disabled]="!myForm.valid">Enviar</button>
         </mat-dialog-actions>
       </mat-grid-tile>
     </form>
