@@ -5,6 +5,28 @@
     <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data" [moving]="true" [autoGenerate]="false" height="850px" width="100%" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
         <igx-grid-toolbar>
             <igx-grid-toolbar-actions>
+                <div>
+                    <form>
+                        <h4>Filtro 🔍</h4>
+                    <mat-form-field>
+                        <mat-label>Filtar por:</mat-label>
+                        <mat-select [(ngModel)]="selectedValue" name="campo">
+                          <mat-option *ngFor="let campo of data | keyvalue">
+                            <p>{{campo.key}}</p>
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Buscar</mat-label>
+                        <input matInput >
+                      </mat-form-field> 
+                      <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+                        <mat-icon>search</mat-icon>
+                      </button>
+                    </form>                     
+                </div>
+            </igx-grid-toolbar-actions>
+            <igx-grid-toolbar-actions>
                 <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
             </igx-grid-toolbar-actions>
         </igx-grid-toolbar>

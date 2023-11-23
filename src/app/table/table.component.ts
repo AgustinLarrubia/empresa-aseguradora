@@ -1,7 +1,7 @@
 import { Component, HostBinding, OnInit, ViewChild } from '@angular/core';
 import { IgxGridComponent } from 'igniteui-angular';
 import { DATA } from '../data/insuranceData';
-
+import { DatosSeguroService } from '../datos-seguro.service';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -13,15 +13,25 @@ export class TableComponent implements OnInit {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent | any;
 
-    public data! : any[];
+    public data! : string[];
 
     public size = 'large';
     public sizes : any;
+    //Filtro
+    public selectedValue: string;
 
-    constructor() {
+    constructor(public datosSeguroService: DatosSeguroService) {
+        this.selectedValue = '';
     }
+    
     public ngOnInit(): void {
-        this.data = DATA;
+
+        this.datosSeguroService.getJSON().subscribe(data => {
+            this.data = DATA;
+            console.log(data);
+          });
+
+
         this.sizes = [
             {
                 label: 'small',

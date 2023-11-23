@@ -25,12 +25,14 @@ import { OldMotorcycleFormComponent } from './check-form/old-motorcycle-form/old
 import { NewMotorcycleFormComponent } from './check-form/new-motorcycle-form/new-motorcycle-form.component';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { HttpClientModule } from '@angular/common/http';
 
 import { 
 	IgxGridModule,
 	IgxButtonGroupModule
  } from "igniteui-angular";
  import { IgxPreventDocumentScrollModule } from "./directives/prevent-scroll.directive";
+import { DatosSeguroService } from './datos-seguro.service';
 
 
 @NgModule({
@@ -65,9 +67,10 @@ import {
     IgxGridModule,
     IgxButtonGroupModule,
     IgxPreventDocumentScrollModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HttpClientModule
   ],
-  providers: [provideNgxMask()],
+  providers: [provideNgxMask(), DatosSeguroService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

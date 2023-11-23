@@ -11,6 +11,7 @@ import { Validators } from '@angular/forms';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent {
+  
 
   clientData = new FormGroup({
     clientName: new FormControl<string>(''),
