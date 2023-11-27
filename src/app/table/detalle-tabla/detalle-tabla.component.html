@@ -1,0 +1,21 @@
+<body>
+  <button routerLink="/table">Volver</button>
+  <h2>Sus Datos:</h2>
+  <ul>
+    <li>ID del Producto: {{seguroDetalle?.ProductID || ''}}</li>
+    <li>Marca del Vehiculo: {{seguroDetalle?.ProductName || ''}}</li>
+    <li>Modelo del Vehiculo: {{seguroDetalle?.carModel || ''}}</li>
+    <li>Patente: {{seguroDetalle?.Patente || ''}}</li>
+    <li>Valor de la cuota: {{seguroDetalle?.UnitPrice || ''}}</li>
+    <li>Cobertura: {{seguroDetalle?.Cobertura || ''}}</li>
+    <li>Estado del seguro: {{seguroDetalle?.Discontinued || ''}}</li>
+    <li>ID del Proveedor: {{seguroDetalle?.SupplierID || ''}}</li>
+    <li>ID de Categoria: {{seguroDetalle?.CategoryID || ''}}</li>
+  </ul>
+  <div class="container">
+    <div class="doneContainer">
+      <mat-icon style="color: white;">done</mat-icon>
+    </div>
+  </div>
+
+</body>

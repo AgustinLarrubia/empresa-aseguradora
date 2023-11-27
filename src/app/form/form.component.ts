@@ -13,7 +13,7 @@ import { Validators } from '@angular/forms';
 export class FormComponent {
   
 
-  clientData = new FormGroup({
+  clientData : FormGroup = new FormGroup({
     clientName: new FormControl<string>(''),
     clientLastName: new FormControl<string>(''),
     clientBrand: new FormControl<string>(''),

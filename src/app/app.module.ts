@@ -33,6 +33,7 @@ import {
  } from "igniteui-angular";
  import { IgxPreventDocumentScrollModule } from "./directives/prevent-scroll.directive";
 import { DatosSeguroService } from './datos-seguro.service';
+import { DetalleTablaComponent } from './table/detalle-tabla/detalle-tabla.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { DatosSeguroService } from './datos-seguro.service';
     NewCarFormComponent,
     OldCarFormComponent,
     OldMotorcycleFormComponent,
-    NewMotorcycleFormComponent
+    NewMotorcycleFormComponent,
+    DetalleTablaComponent
   ],
   imports: [
     BrowserModule,

@@ -1,57 +1,50 @@
 <div class="grid__wrapper">
-    <div class="density-chooser">
-        <igx-buttongroup [values]="sizes" (selected)="selectSize($event)"></igx-buttongroup>
+    <div>
+        <form>
+            <h4>Filtro 🔍</h4>
+            <h4>Filtrado por: {{datosSeguroService.selectedValue}} {{datosSeguroService.listFilter | uppercase}}</h4>
+            <mat-form-field>
+                <mat-label>Filtar por:</mat-label>
+                <mat-select [(value)]="datosSeguroService.selectedValue">
+                    <mat-option value="Patente">Patente</mat-option>
+                    <mat-option value="Fecha">Fecha</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Buscar</mat-label>
+                <input matInput type="text" name="filtro" [(ngModel)]='datosSeguroService._listFilter'
+                    [value]='datosSeguroService._listFilter | uppercase' (keydown.enter)="filter()">
+            </mat-form-field>
+            <button mat-fab color="primary" type="button" (click)="filter()" aria-label="Search icon">
+                <mat-icon>search</mat-icon>
+            </button>
+        </form>
     </div>
-    <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data" [moving]="true" [autoGenerate]="false" height="850px" width="100%" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
-        <igx-grid-toolbar>
-            <igx-grid-toolbar-actions>
-                <div>
-                    <form>
-                        <h4>Filtro 🔍</h4>
-                    <mat-form-field>
-                        <mat-label>Filtar por:</mat-label>
-                        <mat-select [(ngModel)]="selectedValue" name="campo">
-                          <mat-option *ngFor="let campo of data | keyvalue">
-                            <p>{{campo.key}}</p>
-                          </mat-option>
-                        </mat-select>
-                      </mat-form-field>
-                    <mat-form-field>
-                        <mat-label>Buscar</mat-label>
-                        <input matInput >
-                      </mat-form-field> 
-                      <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
-                        <mat-icon>search</mat-icon>
-                      </button>
-                    </form>                     
-                </div>
-            </igx-grid-toolbar-actions>
-            <igx-grid-toolbar-actions>
-                <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
-            </igx-grid-toolbar-actions>
-        </igx-grid-toolbar>
-
-        <igx-column field="ProductName" header="Marca" [sortable]="true" [dataType]="'string'">
-        </igx-column>
-        <igx-column field="carModel" header="Modelo" [sortable]="true" [dataType]="'string'">
-        </igx-column>
-        <igx-column field="QuantityPerUnit" header="Patente" [sortable]="true" [dataType]="'string'">
-        </igx-column>
-        <igx-column field="OrderDate" header="Año" [sortable]="true" [dataType]="'date'">
-        </igx-column>
-        <igx-column field="UnitPrice" header="Valor Cuota" [sortable]="true" dataType="number">
-            <ng-template igxCell let-cell="cell" let-val let-row>
-                {{+val | currency}}
-            </ng-template>
-        </igx-column>
-        <igx-column field="cobertura" header="Cobertura" [sortable]="true" [dataType]="'string'">
-        </igx-column>
-        <igx-column field="Discontinued" header="Asegurado" [sortable]="true" [dataType]="'boolean'">
-            <ng-template igxCell let-cell="cell" let-val>
-                <img *ngIf="val" src="https://www.infragistics.com/angular-demos-lob/assets/images/grid/active.png" title="Continued" alt="Continued" />
-                <img *ngIf="!val" src="https://www.infragistics.com/angular-demos-lob/assets/images/grid/expired.png" title="Discontinued" alt="Discontinued" />
-            </ng-template>
-        </igx-column>
-    </igx-grid>
-
+    <div>
+        <table *ngIf="data.length">
+            <tr>
+                <th>ID</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Patente</th>
+                <th>Precio</th>
+                <th>Fecha</th>
+                <th>Tipo de Cobertura</th>
+                <th>Estado</th>
+                <th></th>
+            </tr>
+            <tr *ngFor="let seguro of data">
+                <td>{{seguro.ProductID}}</td>
+                <td>{{seguro.ProductName}}</td>
+                <td>{{seguro.carModel}}</td>
+                <td>{{seguro.Patente}}</td>
+                <td>{{seguro.UnitPrice}}</td>
+                <td>{{seguro.OrderDate}}</td>
+                <td>{{seguro.Cobertura}}</td>
+                <td>{{seguro.Discontinued}}</td>
+                <td><button routerLink="detalle-tabla" (click)="setIdSeleccionado(seguro.ProductID)">Ver
+                        detalle</button></td>
+            </tr>
+        </table>
+    </div>
 </div>

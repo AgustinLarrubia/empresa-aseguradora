@@ -1,23 +1,26 @@
-<mat-dialog-content class="dialog">
-  <header>
-    <h1 class="titulo">¡Formulario Enviado! 😁</h1>
-  </header>
-  <body>
-    <h2>Sus Datos:</h2>
-    <ul>
-      <li>Nombre: {{clientData.value.clientName}}</li>
-      <li>Apellido: {{clientData.value.clientLastName}}</li>
-      <li>Marca: {{clientData.value.clientBrand}}</li>
-      <li>Modelo: {{clientData.value.clientModel}}</li>
-      <li>Año: {{clientData.value.clientYear}}</li>
-      <li>Correo electronico: {{clientData.value.clientEmail}}</li>
-      <li>Celular: {{clientData.value.clientPhone}}</li>
-    </ul>
-    <div class="container">
-      <div class="doneContainer">
-        <mat-icon style="color: white;">done</mat-icon>
-      </div>
-    </div>
+<mat-dialog-actions>
+  <mat-dialog-content class="dialog">
+    <header>
+      <h1 class="titulo">¡Formulario Enviado! 😁</h1>
+    </header>
 
-  </body>
-</mat-dialog-content>
+    <body>
+      <h2>Sus Datos:</h2>
+      <ul>
+        <li>Nombre: {{clientData.value.clientName}}</li>
+        <li>Apellido: {{clientData.value.clientLastName}}</li>
+        <li>Marca: {{clientData.value.clientBrand}}</li>
+        <li>Modelo: {{clientData.value.clientModel}}</li>
+        <li>Año: {{clientData.value.clientYear}}</li>
+        <li>Correo electronico: {{clientData.value.clientEmail}}</li>
+        <li>Celular: {{clientData.value.clientPhone}}</li>
+      </ul>
+      <div class="container">
+        <div class="doneContainer">
+          <mat-icon style="color: white;">done</mat-icon>
+        </div>
+      </div>
+
+    </body>
+  </mat-dialog-content>
+</mat-dialog-actions>
